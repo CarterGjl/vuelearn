@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'Login',
+  name: 'Login1',
   data () {
     return {
       userName: '',

@@ -5,24 +5,23 @@ import movieRouter from './movie'
 import cinemaRouter from './cinema'
 import mineRouter from './mine'
 // import HelloWorld from '@/components/HelloWorld'
-import Login from '../components/Login'
 import TodoList from '../components/TodoList'
 import WelcomePage from '../components/WelcomePage'
 import LoginView from '../components/LoginPage'
 import ForgotPwdPage from '../components/ForgotPwdPage'
 import Element from 'element-ui'
+import Test from '../view/Test'
+import Query from '../view/Query'
+import Shopping from '../view/shopping/Shopping'
 Vue.use(Router)
 Vue.use(Element)
 export default new Router({
+  // base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
       name: 'LoginView',
       component: LoginView
-    }, {
-      path: '/login',
-      name: 'Login',
-      component: Login
     }, {
       path: '/todo',
       name: 'TodoList',
@@ -37,6 +36,23 @@ export default new Router({
       component: ForgotPwdPage
     }, movieRouter,
     cinemaRouter,
-    mineRouter
+    mineRouter,
+    {
+      path: '/test',
+      component: Test
+    },
+    {
+      path: '/query',
+      component: Query
+    },
+    {
+      path: '/shopping',
+      component: Shopping
+    },
+    {
+      path: '/*',
+      redirect: '/movie'
+    }
+
   ]
 })
